@@ -36,6 +36,13 @@ class _HomePageState extends State<HomePage> {
         actions: [
           MaterialButton(
             onPressed: () {
+              textController.clear();
+              Navigator.pop(context);
+            },
+            child: Text("Close"),
+          ),
+          MaterialButton(
+            onPressed: () {
               String newHabitName = textController.text;
               context.read<HabitDatabase>().addHabit(newHabitName);
               Navigator.pop(context);
@@ -43,13 +50,6 @@ class _HomePageState extends State<HomePage> {
             },
             child: Text("Save"),
           ),
-          MaterialButton(
-            onPressed: () {
-              textController.clear();
-              Navigator.pop(context);
-            },
-            child: Text("Close"),
-          )
         ],
       ),
     );
@@ -73,6 +73,13 @@ class _HomePageState extends State<HomePage> {
             actions: [
               MaterialButton(
                 onPressed: () {
+                  textController.clear();
+                  Navigator.pop(context);
+                },
+                child: Text("Close"),
+              ),
+              MaterialButton(
+                onPressed: () {
                   String toUpdateName = textController.text;
                   context
                       .read<HabitDatabase>()
@@ -82,13 +89,6 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: Text("Edit"),
               ),
-              MaterialButton(
-                onPressed: () {
-                  textController.clear();
-                  Navigator.pop(context);
-                },
-                child: Text("Close"),
-              )
             ],
           );
         });
@@ -103,19 +103,19 @@ class _HomePageState extends State<HomePage> {
             actions: [
               MaterialButton(
                 onPressed: () {
+                  textController.clear();
+                  Navigator.pop(context);
+                },
+                child: Text("Close"),
+              ),
+              MaterialButton(
+                onPressed: () {
                   context.read<HabitDatabase>().deleteHabit(id);
                   Navigator.pop(context);
                   textController.clear();
                 },
                 child: Text("Delete"),
               ),
-              MaterialButton(
-                onPressed: () {
-                  textController.clear();
-                  Navigator.pop(context);
-                },
-                child: Text("Close"),
-              )
             ],
           );
         });
